@@ -6,7 +6,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
-LOCAL_PACKAGE_NAME := ParanoidDoze
+LOCAL_PACKAGE_NAME := MeizuParanoidDoze
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
@@ -19,5 +19,9 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sensor.proximity=true \
+    ro.sensor.pickup=com.meizu.sensor.raise
 
 include $(BUILD_PACKAGE)
